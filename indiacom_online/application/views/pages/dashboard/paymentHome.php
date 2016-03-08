@@ -155,7 +155,7 @@
                                         $payableClass = $papersInfo[$paper->paper_id]['payableClass'][$index];
                                         $waiveOffAmount = $papersInfo[$paper->paper_id]['waiveOff'][$index];
                                         $paidAmount = $papersInfo[$paper->paper_id]['paid'][$index];
-                                        $pendingAmount = $papersInfo[$paper->paper_id]['pending'][$index];
+                                        $pendingAmount = $papersInfo[$paper->paper_id]['Pending'][$index];
                                     }
                                 }
                             }

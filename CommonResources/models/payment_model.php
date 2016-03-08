@@ -685,9 +685,9 @@ class Payment_model extends CI_Model
 
     public function getTax($transDate)
     {
-        $taxRate = HIGHER_TAX;
+        $taxRate = 'HIGHER_TAX' ;
         $transTimestamp = strtotime($transDate);
-        if($transTimestamp < TAX_DECISION_DATE)
+        if($transTimestamp < 'TAX_DECISION_DATE' )
             $taxRate = LOWER_TAX;
         $tax = 1 + ($taxRate/100);
         return $tax;

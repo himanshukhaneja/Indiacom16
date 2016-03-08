@@ -855,7 +855,7 @@ class Dashboard extends BaseController
         $this->data['registrationCat'] = $this->member_model->getMemberCategory($memberID);
         $this->data['currencies'] = $this->currency_model->getAllCurrencies();
         $this->data['selectedCurrency'] = $currency;
-        $this->data['papers'] = $this->paper_status_model->getMemberAcceptedPapers($memberID);
+        $this->data['papers'] = $this->paper_status_model->getMemberAcceptedPapers($memberID,EVENT_ID);
         $this->data['transaction_modes'] = $this->transaction_mode_model->getAllTransactionModes();
         $this->data['discounts'] = $this->discount_model->getMemberEligibleDiscounts($memberID, $this->data['papers']);
         $this->data['mappedTransactions'] = $this->transaction_model->getMemberTempTransactionMappings($memberID);
@@ -872,7 +872,7 @@ class Dashboard extends BaseController
                 $this->data['transactionUsedAmount'][$transaction->transaction_id] = $this->transaction_model->getTransactionUsedAmount($transaction->transaction_id);
             }
         }
-        $this->data['papersInfo'] = $this->payment_model->calculatePayables($memberID, $currency, $this->data['registrationCat'], $this->data['papers'], $transDate);
+        $this->data['papersInfo'] = $this->payment_model->calculatePayables($memberID, $currency, $this->data['registrationCat'], $this->data['papers'], $transDate,EVENT_ID);
         $this->index($page);
     }
 
