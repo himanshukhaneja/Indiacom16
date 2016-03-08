@@ -7,7 +7,7 @@
  */
 
 define('HOST', 'localhost/');
-define('BASEURL_PREFIX', 'Indiacom2015/');
+define('BASEURL_PREFIX', 'Indiacom16/');
 define('DBGROUP', 'default');
 define('SMS_SEND_LINK', "http://203.212.70.200/smpp/sendsms");
 define('SMS_SERVICE_USER_ID', 'bhartiv');

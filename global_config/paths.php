@@ -20,7 +20,7 @@
 //local xampp server
 define('SERVER_ROOT', 'C:/xampp/htdocs/');
 
-define('UPLOAD_PATH_PREFIX', "Indiacom2015/");
+define('UPLOAD_PATH_PREFIX', "Indiacom16/");
 
 //abcdvluprs.com server
 //define('SERVER_ROOT', '/home/u961892577/public_html/');
