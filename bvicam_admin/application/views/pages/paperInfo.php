@@ -139,10 +139,15 @@
                                 <td>
                                     <?php
                                     if($reviewerNames)
+                                        //echo $reviewerNames['7'];
                                         echo $reviewerNames[$reviewer_id];
                                     ?>
                                 </td>
-                                <td><?php echo $reviewStageDetails[$review->paper_version_review_stage]->review_stage_name; ?></td>
+                                <td><?php 
+                                //echo $reviewStageDetails['IR'];
+                                 echo $reviewStageDetails[$review->paper_version_review_stage];
+                                ?>
+                                </td>
                                 <td>
                                     <?php
                                     if($review->paper_version_review_date_of_receipt)

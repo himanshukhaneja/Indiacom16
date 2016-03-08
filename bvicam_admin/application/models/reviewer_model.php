@@ -52,7 +52,7 @@ class Reviewer_model extends CI_Model
 
         if($role_id > 0)
         {
-            $this -> db -> select('*');
+            $this -> db -> select('*');//select('user_id , role_id  , user_name');
             $this -> db -> from('user_event_role_mapper');
             $this -> db -> join('user_master', 'user_event_role_mapper.user_id = user_master.user_id');
             $this -> db -> where('role_id', $role_id);

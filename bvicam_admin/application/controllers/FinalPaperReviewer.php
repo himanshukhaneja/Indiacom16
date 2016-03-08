@@ -281,7 +281,7 @@ class FinalPaperReviewer extends BaseController
         $reviewStageDetails = array();
         foreach($this->data['reviewStages'] as $reviewStage)
         {
-            $reviewStageDetails[$reviewStage->review_stage_id] = $reviewStage;
+            $reviewStageDetails[$reviewStage->review_stage_id] = $reviewStage->review_stage_name;
             $totalReviewStages++;
         }
 
