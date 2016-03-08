@@ -146,7 +146,7 @@ class PaymentsManager extends BaseController
                     $this->data['isProfBodyMember'] = $this->member_model->isProfBodyMember($memberId);
                     $this->data['registrationCategories'] = $this->member_categories_model->getMemberCategories();
                     $this->data['registrationCat'] = $this->member_model->getMemberCategory($memberId);
-                    $this->data['papers'] = $this->paper_status_model->getMemberAcceptedPapers($memberId, EVENT_ID);
+                    $this->data['papers'] = $this->paper_status_model->getMemberAcceptedPapers($memberId, 1);
                     $this->data['transaction_modes'] = $this->transaction_mode_model->getAllTransactionModes();
                     $this->data['discounts'] = $this->discount_model->getMemberEligibleDiscounts($memberId, $this->data['papers']);
                     if($this->discount_model->error != null)
@@ -237,7 +237,7 @@ class PaymentsManager extends BaseController
                     $currency,
                     $transDate,
                     $discountType,
-                    EVENT_ID
+                    1
                 );
 
                 if($payAmount > $payableClass->payable_class_amount)

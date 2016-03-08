@@ -26,8 +26,9 @@ class Payable_class_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('payable_class');
-        if($eventId != null)
-            $this->db->where('payable_class_event', $eventId);
+        //if($eventId != null)
+        echo "helo";
+            $this->db->where('payable_class_event', 1);
         $query = $this->db->get();
         if($query->num_rows() == 0)
             return array();

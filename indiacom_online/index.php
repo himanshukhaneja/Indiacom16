@@ -21,7 +21,7 @@
     session_start();
     require_once("../global_config/config.php");
     define('BASEURL', BASEURL_PREFIX.'indiacom_online/');
-
+    //define('EVENT_ID',1);
     define('DEFAULT_ROLE', 31);
 	define('ENVIRONMENT', 'development');
     define('COMMON', 'CommonResources/');
@@ -37,7 +37,7 @@
     }
     define('REVIEW_RESULT_ACCEPTED_ID', 8);
     define('BULK_REGISTRATION_MIN_REGISTRATION_VALUE', 3);
-    define('EVENT_ID',3);
+    define('EVENT_ID',1);
     require('application/config/paths.php');
     require('application/config/exceptions.php');
 /*

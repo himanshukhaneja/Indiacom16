@@ -64,7 +64,7 @@ class Currency_model extends CI_Model
         switch($currency)
         {
             case "USD":
-                return 60;
+                return 67;
             case "INR":
                 return 1;
         }
