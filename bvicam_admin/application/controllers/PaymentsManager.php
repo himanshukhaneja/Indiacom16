@@ -617,7 +617,7 @@ class PaymentsManager extends BaseController
             $paperId,
             $payheadId
         );
-        $tax = $this->payment_model->getTax($date);
+        //$tax = $this->payment_model->getTax($date);
         if(empty($paidPayments))
         {
             $payableClass = $this->payable_class_model->getPayableClass(
@@ -628,7 +628,7 @@ class PaymentsManager extends BaseController
                 $date,
                 $eventId
             );
-            $payableClass->payable_class_amount *= $tax;
+            //$payableClass->payable_class_amount *= $tax;
         }
         else
         {
@@ -641,7 +641,7 @@ class PaymentsManager extends BaseController
                 $discountAmt = floor($payableClass->payable_class_amount * $detail->discount_type_amount);
                 $payableClass->payable_class_amount -= $discountAmt;
             }
-            $payableClass->payable_class_amount *= $tax;
+            //$payableClass->payable_class_amount *= $tax;
             $payableClass->payable_class_amount -= $paidAmount;
         }
         return $payableClass;

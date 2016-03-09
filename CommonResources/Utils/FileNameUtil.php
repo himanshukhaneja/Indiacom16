@@ -18,7 +18,7 @@ class FileNameUtil
         return "{$memberId}_biodata{$fileExt}";
     }
 
-    public function makePaperVersionFilename($paperId, $versionNumber, $fileExt = "")
+    public static function makePaperVersionFilename($paperId, $versionNumber, $fileExt = "")
     {
         return "Paper_{$paperId}v{$versionNumber}{$fileExt}";
     }
@@ -28,7 +28,7 @@ class FileNameUtil
         return "Report_{$paperId}v{$versionNumber}{$fileExt}";
     }
 
-    public function makeConvenerReviewCommentsFilename($paperVersionId, $fileExt = "")
+    public static function makeConvenerReviewCommentsFilename($paperVersionId, $fileExt = "")
     {
         return "{$paperVersionId}reviews{$fileExt}";
     }

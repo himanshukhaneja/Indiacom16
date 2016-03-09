@@ -310,7 +310,7 @@
                                     {
                                         if(isset($papersInfo[$paper->paper_id]['paid']))
                                         {
-                                            $payable = $papersInfo[$paper->paper_id]['payable'][$index] * $papersInfo[$paper->paper_id]['tax'];
+                                            $payable = $papersInfo[$paper->paper_id]['payable'][$index] ;//* $papersInfo[$paper->paper_id]['tax'];
                                             $payheadId = $payhead->payment_head_id;
                                             $payableClass = $papersInfo[$paper->paper_id]['payableClass'][$index];
                                             $waiveOffAmount = $papersInfo[$paper->paper_id]['waiveOff'][$index];
@@ -385,7 +385,7 @@
                                     {
                                         if($paymentHead->payment_head_name == "OLPC")
                                             continue;
-                                        $taxRate = ($papersInfo[$paper->paper_id]['tax'] - 1) * 100;
+                                       // $taxRate = ($papersInfo[$paper->paper_id]['tax'] - 1) * 100;
                                         /*if(
                                             (
                                                 isset($validDiscounts['paperSpecific'][$paymentHead->payment_head_id][$paper->paper_id])
@@ -426,7 +426,7 @@
                                                     }
                                                     else
                                                     {
-                                                        $payableAmount = ($payableClasses[$index]->payable_class_amount - ($discount->discount_type_amount * $payableClasses[$index]->payable_class_amount)) * $papersInfo[$paper->paper_id]['tax'];
+                                                        $payableAmount = ($payableClasses[$index]->payable_class_amount - ($discount->discount_type_amount * $payableClasses[$index]->payable_class_amount)) ;//* $papersInfo[$paper->paper_id]['tax'];
                                                         $pendingAmount = $payableAmount; //$payableClasses[$index]->payable_class_amount - ($discount->discount_type_amount * $payableClasses[$index]->payable_class_amount);
                                                     }
                                                     ?>
@@ -442,7 +442,8 @@
                                                         if(isset($papersInfo[$paper->paper_id]['paid']) && isset($papersInfo[$paper->paper_id]['discountType']))
                                                             echo " checked";
                                                         ?>>
-                                                    <?php $discountRate = $discount->discount_type_amount * 100; echo "{$paymentHead->payment_head_name} with {$discount->discount_type_name} discount ({$discountRate}%) + {$taxRate}% tax"; ?>
+                                                    <?php $discountRate = $discount->discount_type_amount * 100; 
+                                                    echo "{$paymentHead->payment_head_name} with {$discount->discount_type_name} discount ({$discountRate}%) "; ?>
                                                 <?php
                                                 }
                                             }
@@ -458,13 +459,13 @@
                                                         if(isset($papersInfo[$paper->paper_id]['paid']))
                                                             echo $payable;
                                                         else
-                                                            echo $payableClasses[$index]->payable_class_amount * $papersInfo[$paper->paper_id]['tax'];
+                                                            echo $payableClasses[$index]->payable_class_amount;// * $papersInfo[$paper->paper_id]['tax'];
                                                     ?>"
                                                    data-pending="<?php
                                                         if(isset($papersInfo[$paper->paper_id]['paid']))
                                                             echo $pendingAmount;
                                                         else
-                                                            echo $payableClasses[$index]->payable_class_amount * $papersInfo[$paper->paper_id]['tax'];
+                                                            echo $payableClasses[$index]->payable_class_amount ;//* $papersInfo[$paper->paper_id]['tax'];
                                                    ?>"
                                                    data-payheadId="<?php echo $payableClasses[$index]->payable_class_payhead_id; ?>"
                                                 <?php
@@ -473,7 +474,7 @@
                                                 if(isset($papersInfo[$paper->paper_id]['paid']) && !isset($papersInfo[$paper->paper_id]['discountType']))
                                                     echo " checked";
                                                 ?>>
-                                            <?php echo "{$paymentHead->payment_head_name} + {$taxRate}% tax"; ?>
+                                            <?php echo "{$paymentHead->payment_head_name}"; ?>
                                         <?php
                                         }
                                     }

@@ -552,7 +552,7 @@ class Payment_model extends CI_Model
                 $this->load->model('submission_model');
                 $submissionId = $this->submission_model->getSubmissionId($memberID, $paper->paper_id);
                 $breakup = $this->getPaymentBreakup($submissionId, $papersInfo[$paper->paper_id]['payhead'][0]->payment_head_id);
-                $papersInfo[$paper->paper_id]['tax'] = $this->getTax($breakup[0]->transaction_date);
+                //$papersInfo[$paper->paper_id]['tax'] = $this->getTax($breakup[0]->transaction_date);
             }
             else
             {
@@ -567,7 +567,7 @@ class Payment_model extends CI_Model
                     $comboPayableClass,
                     $papersInfo[$paper->paper_id]
                 );
-                $papersInfo[$paper->paper_id]['tax'] = $this->getTax($transDate);
+                //$papersInfo[$paper->paper_id]['tax'] = $this->getTax($transDate);
             }
         }
         return $papersInfo;
@@ -683,6 +683,7 @@ class Payment_model extends CI_Model
         }
     }
 
+/*
     public function getTax($transDate)
     {
         $taxRate = 'HIGHER_TAX' ;
@@ -692,4 +693,6 @@ class Payment_model extends CI_Model
         $tax = 1 + ($taxRate/100);
         return $tax;
     }
+
+*/
 }
