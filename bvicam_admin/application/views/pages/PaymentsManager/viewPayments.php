@@ -69,8 +69,8 @@ if($viewBy == "members")
                                         <th>Discount</th>
                                         <th>Discount Type</th>
                                         <th>Payable<br>(with waiveoff and discount)</th>
-                                        <th>Tax Rate Applied</th>
-                                        <th>Payable After Tax</th>
+                                        <!--<th>Tax Rate Applied</th>
+                                        <th>Payable After Tax</th>-->
                                         <th>Paid</th>
                                         <th>Outstanding</th>
                                         <th></th>
@@ -91,9 +91,9 @@ if($viewBy == "members")
                                             $waiveOffAmt = $memberPayment->waiveoff_amount;
                                             $discountAmt = floor($memberPayment->payable_class_amount * $memberPayment->discount_type_amount);
                                             $discountedPayable = $payableAmt - $discountAmt;
-                                            $tax = $payment_model->getTax($memberPayment->transaction_date);
-                                            $taxedPayableAmount = $discountedPayable * $tax;
-                                            $actualPayable = $taxedPayableAmount - $waiveOffAmt;
+                                            //$tax = $payment_model->getTax($memberPayment->transaction_date);
+                                            //$taxedPayableAmount = $discountedPayable * $tax;
+                                            $actualPayable =  $discountedPayable - $waiveOffAmt;
                                             if(isset($memberPayment->payable_class_nationality))
                                                 $paidAmt = $memberPayment->paid_amount / $exchangeRate[$nationalities[$memberPayment->payable_class_nationality]->Nationality_currency];
                                             else
@@ -126,8 +126,9 @@ if($viewBy == "members")
                                                 ?>
                                             </td>
                                             <td><?php echo $currency; ?> <?php echo $actualPayable; ?>/-</td>
+                                            <!--
                                             <td><?php echo ($tax - 1) * 100 . "%"; ?></td>
-                                            <td><?php echo $taxedPayableAmount; ?></td>
+                                            <td><?php echo $taxedPayableAmount; ?></td>-->
                                             <td>
                                                 <button class="btn btn-link">
                                                     <?php echo $currency; ?> <?php echo $paidAmt; ?>/-
