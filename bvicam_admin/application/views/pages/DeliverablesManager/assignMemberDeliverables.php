@@ -25,15 +25,15 @@
                 foreach($deliverablesPayments as $index => $payment)
                 {
                     //foreach($payments_array as $index => $payments)
-                    {
+                    
             ?>
                         <tr>
                             <td class ="member_id" data-member_id=
                                 "<?php
                                 if(isset($payment -> payment_member_id))
-                                    echo $payment -> payment_member_id;
+                                     $payment -> payment_member_id;
                                 else if(isset($payment -> payment_submission_id))
-                                    echo $payment -> submission_member_id;
+                                     $payment -> submission_member_id;
                                 ?>"
                             >
                                 <?php
@@ -42,10 +42,11 @@
                                     else if(isset($payment -> payment_submission_id))
                                         echo $payment -> submission_member_id;
                                 ?>
+
                             </td>
                             <td  class="submission_id" data-submission_id =
                                 "<?php
-                                    echo $payment->payment_submission_id;
+                                 $payment->payment_submission_id;
                                 ?>"
                             >
                                 <?php
@@ -97,7 +98,7 @@
                             </td>
                         </tr>
                     <?php
-                    }
+                    
 
                 }
             ?>

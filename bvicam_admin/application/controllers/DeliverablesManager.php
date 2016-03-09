@@ -84,7 +84,7 @@ class DeliverablesManager extends BaseController
 
         $brPayheadId = $this->payment_head_model->getPaymentHeadId("BR");
         $prPayheadId = $this->payment_head_model->getPaymentHeadId("PR");
-        $comboPayheadId = $this->payment_head_model->getPaymentHeadId("COMBO");
+        //$comboPayheadId = $this->payment_head_model->getPaymentHeadId("COMBO");
 
         if($brPayheadId == null && $prPayheadId == null && $comboPayheadId == null)
         {
@@ -93,7 +93,7 @@ class DeliverablesManager extends BaseController
 
         $orig_payments[$brPayheadId] = $this->payment_model->getPayments($memberId, null, $brPayheadId);
         $orig_payments[$prPayheadId] = $this->payment_model->getPayments($memberId, null, $prPayheadId);
-        $orig_payments[$comboPayheadId] = $this->payment_model->getPayments($memberId, null, $comboPayheadId);
+        //$orig_payments[$comboPayheadId] = $this->payment_model->getPayments($memberId, null, $comboPayheadId);
 
         $payments_record = array();
 
