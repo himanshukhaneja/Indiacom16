@@ -10,7 +10,7 @@ require_once(dirname(__FILE__) . "/../../../CommonResources/Base/BaseController.
 
 class CsvController extends BaseController
 {
-    private $dataPath = "C:\\Users\\Gentleman\\Desktop\\CSV FILES\\";
+    private $dataPath = "C:\\xampp\\htdocs\\Indiacom16\\CSV_files\\";
     public function __construct()
     {
         parent::__construct();
