@@ -300,7 +300,7 @@
                                                 }
                                                 else
                                                 {
-                                                    $payableAmount = ($payableClasses[$index]->payable_class_amount - ($discount->discount_type_amount * $payableClasses[$index]->payable_class_amount)) * $papersInfo[$paper->paper_id]['tax'];
+                                                    $payableAmount = ($payableClasses[$index]->payable_class_amount - ($discount->discount_type_amount * $payableClasses[$index]->payable_class_amount)) ;//* $papersInfo[$paper->paper_id]['tax'];
                                                     $pendingAmount = $payableAmount; //$payableClasses[$index]->payable_class_amount - ($discount->discount_type_amount * $payableClasses[$index]->payable_class_amount);
                                                 }
                                                 ?>
@@ -332,13 +332,13 @@
                                                if(isset($papersInfo[$paper->paper_id]['paid']))
                                                    echo $payable;
                                                else
-                                                   echo $payableClasses[$index]->payable_class_amount * $papersInfo[$paper->paper_id]['tax'];
+                                                   echo $payableClasses[$index]->payable_class_amount ;//* $papersInfo[$paper->paper_id]['tax'];
                                                ?>"
                                                data-pending="<?php
                                                if(isset($papersInfo[$paper->paper_id]['paid']))
                                                    echo $pendingAmount;
                                                else
-                                                   echo $payableClasses[$index]->payable_class_amount * $papersInfo[$paper->paper_id]['tax'];
+                                                   echo $payableClasses[$index]->payable_class_amount ;//* $papersInfo[$paper->paper_id]['tax'];
                                                ?>"
                                                data-payheadId="<?php echo $payableClasses[$index]->payable_class_payhead_id; ?>"
                                             <?php
