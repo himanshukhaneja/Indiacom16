@@ -31,9 +31,9 @@
                             <td class ="member_id" data-member_id=
                                 "<?php
                                 if(isset($payment -> payment_member_id))
-                                     $payment -> payment_member_id;
+                                    echo $payment -> payment_member_id;
                                 else if(isset($payment -> payment_submission_id))
-                                     $payment -> submission_member_id;
+                                     echo $payment -> submission_member_id;
                                 ?>"
                             >
                                 <?php
@@ -46,7 +46,7 @@
                             </td>
                             <td  class="submission_id" data-submission_id =
                                 "<?php
-                                 $payment->payment_submission_id;
+                                 echo $payment->payment_submission_id;
                                 ?>"
                             >
                                 <?php
