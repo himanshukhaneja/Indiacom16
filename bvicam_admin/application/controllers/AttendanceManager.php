@@ -50,7 +50,7 @@ class AttendanceManager extends BaseController
             {
                 if(isset($papersInfo[$paper_id]['paid']))
                 {
-                    $payable = $papersInfo[$paper_id]['payable'][$index] * $papersInfo[$paper_id]['tax'];
+                    $payable = $papersInfo[$paper_id]['payable'][$index] ;//* $papersInfo[$paper_id]['tax'];
                     $waiveOffAmount = $papersInfo[$paper_id]['waiveOff'][$index];
                     $paidAmount = $papersInfo[$paper_id]['paid'][$index];
                     $pendingAmount = $payable - $paidAmount - $waiveOffAmount; //$papersInfo[$paper->paper_id]['pending'][$index];

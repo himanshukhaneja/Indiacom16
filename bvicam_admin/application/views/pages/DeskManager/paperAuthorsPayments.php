@@ -521,6 +521,7 @@ else
                 data: "memberId=" + memberId + "&paperId=" + paperId + "&isPresent=" + isPresent,
                 success: function(msg)
                 {
+                    //alert(msg);
                     if(msg == "true")
                         $(".attInfo", ref_td).html("Updated");
                     else

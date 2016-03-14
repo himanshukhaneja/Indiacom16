@@ -484,6 +484,7 @@
                 url: "/<?php echo BASEURL; ?>index.php/CertificateManager/markCertificateGiven_AJAX",
                 data: "submissionId=" + submissionId + "&is_certificate_given=" + certificateGiven,
                 success: function (msg) {
+                	//alert(msg);
                     if (msg == "true") {
                         if (certificateGiven == 0) {
                             $(this).val(0);
