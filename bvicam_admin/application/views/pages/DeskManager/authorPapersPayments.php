@@ -468,7 +468,7 @@ else
                 url: "/<?php echo BASEURL; ?>index.php/AttendanceManager/markDeskAttendance_AJAX",
                 data: "memberId=" + memberId + "&paperId=" + paperId + "&isPresent=" + isPresent,
                 success: function (msg) {
-                    //alert(msg);
+                    alert(msg);
                     if (msg == "true") {
                         $(".attInfo", ref_td).html("Updated");
                     }
