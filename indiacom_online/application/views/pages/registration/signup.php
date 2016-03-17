@@ -326,10 +326,10 @@
                 <label for="captcha" class="col-sm-3 control-label">Captcha</label>
 
                 <div class="col-sm-9">
-                        <div class="g-recaptcha" data-sitekey="6LcQQwYTAAAAAIz1OAMs4WX1np0LJfmm_vDCCexw"></div>
+                        <div class="g-recaptcha" data-sitekey="6LdHGBsTAAAAAI7vp8mrOxOCAJqnmIU4Z-Tt4qEI"></div>
 
                 </div>
-                <div class="col-sm-8 col-sm-offset-4 text-danger h5" id="errorText">
+                //<div class="col-sm-8 col-sm-offset-4 text-danger h5" id="errorText">
                     <?php echo form_error('g-recaptcha-response'); ?>
                 </div>
             </div>
